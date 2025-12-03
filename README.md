@@ -4,4 +4,5 @@
 The repository already contains the compiled Android APK file, with the following path:
 
 ```text
-release/app-release.apk
+firstapp/build/app/outputs/flutter-apk/app-release.apk
+
