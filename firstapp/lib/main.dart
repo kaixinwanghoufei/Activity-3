@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tui shop',
       theme: ThemeData(
-        fontFamily: 'maa',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'Pattama Shop'),
@@ -70,9 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: Colors.red,
                 ),
               ),
-              SizedBox(height: 20),
               Image.asset("assets/1.jpg", height: 100),
-              SizedBox(height: 20),
+              Image.network(
+                'https://s3.ifanr.com/wp-content/uploads/2014/02/3dgifs6.gif',
+                height: 120,
+              ),
+              SizedBox(height: 8),
               priceTextField(),
               amountTextField(),
               calculateButton(),
@@ -134,10 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget showTotalText() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text('total : $_total Baht'),
+  Widget showTotalText() {  : $_total Baht'),
     );
   }
 
@@ -180,29 +179,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget showChangeText() {
-    final text = _changeMessage.isNotEmpty
-        ? _changeMessage
-        : 'Change : $_change Baht';
+    final text =
+        _changeMessage.isNotEmpty ? _changeMessage : 'Change : $_change Baht';
 
     return Padding(padding: const EdgeInsets.all(8.0), child: Text(text));
   }
 }
-
-//  Text(
-//             "change Calcuate",
-//             style: TextStyle(fontFamily: "maa"),
-//           ),
-//           Padding(padding: const EdgeInsets.all(8.0), child: priceTextField()),
-
-// body: Column(
-//               children: [
-//                 Text(
-//                   "change Calcuate",
-//                   style: TextStyle(
-//                       fontFamily: "maa",
-//                       fontSize: 48,
-//                       fontWeight: FontWeight.bold,
-//                       fontStyle: FontStyle.italic,
-//                       color: Colors.deepPurple,
-//                       backgroundColor: Colors.blue),
-//                 ),
