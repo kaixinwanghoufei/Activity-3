@@ -23,6 +23,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/data.json
     - assets/1.jpg
 
   fonts:
